@@ -4,7 +4,7 @@ import streamlit as st
 
 @st.cache_data
 def load_model():
-    file_path = 'web-app/oleg/Support_Vector_Regressor_model.pkl'
+    file_path = 'Support_Vector_Regressor_model.pkl'
     try:
         with open(file_path, 'rb') as file:
             loaded_model = pickle.load(file)
