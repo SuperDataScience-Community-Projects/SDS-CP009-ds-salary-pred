@@ -46,7 +46,7 @@ def app():
     # web-app/oleg/companies.csv
     # /workspaces/SDS-009-ds-salary-pred/web-app/oleg/companies.csv
 
-    location_df = load_data('web-app/oleg/companies.csv')
+    location_df = load_data('web-app/oleg/locations.csv')
     job_df = load_data('web-app/oleg/jobs.csv')
     company_df = load_data('web-app/oleg/companies.csv')
    
