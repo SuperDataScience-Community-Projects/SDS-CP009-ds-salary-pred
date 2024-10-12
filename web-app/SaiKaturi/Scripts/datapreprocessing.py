@@ -1,4 +1,6 @@
 import re
+import os
+import pandas as pd
 
 def datapreprocessing(dataset):
     dataset['Salary'].astype(str)
@@ -180,4 +182,11 @@ def datapreprocessing(dataset):
     dataset['State'] = dataset['Location'].apply(ExtractState)
     i = dataset[dataset['State']=="Error"].index
     dataset.loc[i,'State'] = "MN"
+    directory = os.path.expanduser('Data/Processed')
+    dataset.to_csv(os.path.join(directory,'Processed.csv'))
+    return dataset
+
+def dataprocessingnofile():
+    directory = os.path.expanduser('Data/Processed')
+    dataset = pd.read_csv(os.path.join(directory,'Processed.csv'))
     return dataset

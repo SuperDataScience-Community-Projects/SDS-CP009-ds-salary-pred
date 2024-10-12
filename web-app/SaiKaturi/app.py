@@ -3,8 +3,8 @@ import streamlit as st
 import pandas as pd
 import os
 from Scripts.utils import load_data
-from Scripts.datacleaning import clean_data,check_null_values
-from Scripts.datapreprocessing import datapreprocessing
+from Scripts.datacleaning import clean_data,check_null_values,datacleaningnofile
+from Scripts.datapreprocessing import datapreprocessing,dataprocessingnofile
 from Scripts.datavisualization import plot_data
 from Scripts.model import load_model, predict
 
@@ -28,7 +28,7 @@ if uploaded_file:
     # Clean data
     cleaned_data = clean_data(df)
     st.write("Cleaned Data")
-    cleaned_data.to_csv("Data/Cleaned/cleaned_data.csv")
+    
     st.dataframe(cleaned_data.head())
 
     # Check null values
@@ -39,7 +39,6 @@ if uploaded_file:
     #Preprocessing the data
     processed_data = datapreprocessing(cleaned_data)
     st.write("Preprocessed data")
-    processed_data.to_csv("Data/Processed/Processed_data.csv")
     st.dataframe(processed_data.head())
 
     #Data Visualization
@@ -52,23 +51,16 @@ if uploaded_file:
     for image_file in image_files:
         image_path = os.path.join(image_folder, image_file)
         st.image(image_path, caption=image_file)
-    ''' 
-    # Model Prediction
-    model = load_model()
-    if st.button('Predict'):
-        predictions = predict(model, cleaned_data)
-        st.write("Predictions")
-        st.write(predictions)
-'''
-else:
-    cleaned_data = pd.read_csv('Data/Cleaned/Cleaned_data.csv')
-    st.write("Cleaned data")
+    
+else :
+    #Data Cleaning
+    st.write("Processed data")
+    cleaned_data = datacleaningnofile()
     st.dataframe(cleaned_data.head())
 
-
-    processed_data = pd.read_csv('Data/Processed/Processed_data.csv')
-
-    st.write("Preprocessed data")
+    #Data preprocessing
+    st.write("Processed data")
+    processed_data = dataprocessingnofile()
     st.dataframe(processed_data.head())
 
     #Data Visualization
