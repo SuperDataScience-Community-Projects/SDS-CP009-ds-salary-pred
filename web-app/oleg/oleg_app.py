@@ -31,7 +31,11 @@ def load_data(file_path: str):
         st.error(f"An unexpected error occurred: {e}")
         return None
 
-
+def predict( company_value, location_value, job_value) -> float:
+    model = load_model()
+    input_df=pd.DataFrame([[company_value, location_value, job_value]], columns=['Company_Code', 'Location_Code', 'Job_Code'])
+    avg_salary_predicted = model.predict(input_df)
+    return avg_salary_predicted
 # App execution
 def app():
     #initialise page
@@ -41,8 +45,7 @@ def app():
             layout='wide'
             )
     #load data
-    model = load_model()
-    
+     
     # web-app/oleg/companies.csv
     # /workspaces/SDS-009-ds-salary-pred/web-app/oleg/companies.csv
 
@@ -67,15 +70,10 @@ def app():
         # Retrieve the corresponding value
         company_value = company_df[company_df['Company'] == company_name]['Company_Code'].values[0]
     
-        #job
-
-        #company
-
-        # st.selectbox('Location', ["A1",2,3])
-        # st.selectbox('Job', [1,2,3])
-        # st.selectbox('Company', [1,2,3])
-
-
+        if st.button("Predict"): 
+            avg_salary_predicted = predict(company_value, location_value, job_value)
+    
+    st.write(avg_salary_predicted)
 
 #run application 
 if __name__ == "__main__":
