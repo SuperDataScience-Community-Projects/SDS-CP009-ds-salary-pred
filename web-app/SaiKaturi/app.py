@@ -3,8 +3,8 @@ import streamlit as st
 import pandas as pd
 import os
 from Scripts.utils import load_data
-from Scripts.datacleaning import clean_data,check_null_values,datacleaningnofile
-from Scripts.datapreprocessing import datapreprocessing,dataprocessingnofile
+from Scripts.datacleaning import clean_data,check_null_values
+from Scripts.datapreprocessing import datapreprocessing
 from Scripts.datavisualization import plot_data
 from Scripts.model import load_model, predict
 
@@ -39,28 +39,6 @@ if uploaded_file:
     #Preprocessing the data
     processed_data = datapreprocessing(cleaned_data)
     st.write("Preprocessed data")
-    st.dataframe(processed_data.head())
-
-    #Data Visualization
-    st.write("Data Visualization")
-    plot_data(processed_data)
-    image_folder = 'Images/'
-    # Get a list of all files in the folder
-    image_files = [f for f in os.listdir(image_folder) if f.endswith(('.png', '.jpg', '.jpeg'))]
-    # Display each image in the folder
-    for image_file in image_files:
-        image_path = os.path.join(image_folder, image_file)
-        st.image(image_path, caption=image_file)
-    
-else :
-    #Data Cleaning
-    st.write("Processed data")
-    cleaned_data = datacleaningnofile()
-    st.dataframe(cleaned_data.head())
-
-    #Data preprocessing
-    st.write("Processed data")
-    processed_data = dataprocessingnofile()
     st.dataframe(processed_data.head())
 
     #Data Visualization
