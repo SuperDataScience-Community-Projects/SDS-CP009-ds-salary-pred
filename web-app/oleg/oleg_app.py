@@ -32,7 +32,7 @@ def load_data(file_path: str):
 
 def predict( company_value, location_value, job_value) -> float:
 # --
-    file_path = "Support_Vector_Regressor_model.pkl"
+    file_path = 'workspaces/SDS-009-ds-salary-pred/notebooks/oleg/Support_Vector_Regressor_model.pkl'
     try:
         model = joblib.load(file_path)
     except FileNotFoundError:
