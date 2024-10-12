@@ -42,10 +42,12 @@ def app():
             )
     #load data
     model = load_model()
-    location_df = load_data('locations.csv')
+    # location_df = load_data('locations.csv')
+    location_df = load_data('web-app/oleg/companies.csv')
     job_df = load_data('jobs.csv')
     company_df = load_data('companies.csv')
-
+# web-app/oleg/companies.csv
+# /workspaces/SDS-009-ds-salary-pred/web-app/oleg/companies.csv
    
     
     # with st.sidebar:
