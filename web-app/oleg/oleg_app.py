@@ -64,7 +64,7 @@ def app():
         st.selectbox('Job', [1,2,3])
         st.selectbox('Company', [1,2,3])
 
-    st.write = location_value
+    # st.write = location_value
 
 #run application 
 if __name__ == "__main__":
