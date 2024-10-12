@@ -52,7 +52,7 @@ def app():
         #Location
         location_name = st.selectbox('Location :', location_df['Location'])
         # Retrieve the corresponding value
-        location_value = location_df[location_df['Location'] == location_name]['Location_Code'].values[0]
+        # location_value = location_df[location_df['Location'] == location_name]['Location_Code'].values[0]
             
 
 
