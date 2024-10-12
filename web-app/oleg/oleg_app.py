@@ -2,7 +2,7 @@ import joblib
 import pandas as pd
 import streamlit as st
 
-@st.cache_data
+# @st.cache_data
 def load_model():
     file_path = "Support_Vector_Regressor_model.pkl"
     try:
