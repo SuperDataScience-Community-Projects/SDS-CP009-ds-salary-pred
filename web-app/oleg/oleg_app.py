@@ -55,7 +55,7 @@ def app():
     job_df = load_data('web-app/oleg/jobs.csv')
     company_df = load_data('web-app/oleg/companies.csv')
    
-   avg_salary_predicted=0
+    avg_salary_predicted=0
     
     with st.sidebar:
        #Location
