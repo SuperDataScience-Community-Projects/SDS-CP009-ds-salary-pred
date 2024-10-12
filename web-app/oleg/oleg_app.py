@@ -3,41 +3,44 @@ import pandas as pd
 import streamlit as st
 
 # @st.cache_data
-def load_model():
-    file_path = "Support_Vector_Regressor_model.pkl"
-    try:
-        loaded_model = joblib.load(file_path)
-        return(loaded_model)
-    except FileNotFoundError:
-        print(f"Error: The file '{file_path}' was not found.")
-        return None   
-    except IOError:
-        print(f"Error: An error occurred while trying to read the file '{file_path}'.")
-        return None 
-    except Exception as e:
-        print(f"An unexpected error occurred: {e}")
-        return None
+# def load_model():
+#     file_path = "Support_Vector_Regressor_model.pkl"
+#     try:
+#         loaded_model = joblib.load(file_path)
+#         return(loaded_model)
+#     except FileNotFoundError:
+#         print(f"Error: The file '{file_path}' was not found.")
+#         return None   
+#     except IOError:
+#         print(f"Error: An error occurred while trying to read the file '{file_path}'.")
+#         return None 
+#     except Exception as e:
+#         print(f"An unexpected error occurred: {e}")
+#         return None
     
 
-# def load_data(file_path: str):
-#     try:
-#         df = pd.read_csv(file_path)
-#         return df
-#     except FileNotFoundError:
-#         st.error(f"Error: The file '{file_path}' was not found.")
-#         return None
-#     except Exception as e:
-#         st.error(f"An unexpected error occurred: {e}")
-#         return None
+def load_data(file_path: str):
+    try:
+        df = pd.read_csv(file_path)
+        return df
+    except FileNotFoundError:
+        st.error(f"Error: The file '{file_path}' was not found.")
+        return None
+    except Exception as e:
+        st.error(f"An unexpected error occurred: {e}")
+        return None
 
 def predict( company_value, location_value, job_value) -> float:
 # --
+    file_path = "Support_Vector_Regressor_model.pkl"
     try:
-        model= pd.read_csv(file_path)
+        model = joblib.load(file_path)
     except FileNotFoundError:
-        st.error(f"Error: The file '{file_path}' was not found.")
+        print(f"Error: The file '{file_path}' was not found.")  
+    except IOError:
+        print(f"Error: An error occurred while trying to read the file '{file_path}'.")
     except Exception as e:
-        st.error(f"An unexpected error occurred: {e}")
+        print(f"An unexpected error occurred: {e}")
 # --
     # model = load_model()
     input_df=pd.DataFrame([[company_value, location_value, job_value]], columns=['Company_Code', 'Location_Code', 'Job_Code'])
