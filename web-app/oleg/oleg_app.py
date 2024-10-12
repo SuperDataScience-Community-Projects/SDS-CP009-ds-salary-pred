@@ -20,9 +20,9 @@ def load_model():
         return None
     
 
-def load_data(file_path):
+def load_data(file_path: str):
     try:
-        df = pd.read_csv(file_path,'rb')
+        df = pd.read_csv(file_path)
         return df
     except FileNotFoundError:
         st.error(f"Error: The file '{file_path}' was not found.")
