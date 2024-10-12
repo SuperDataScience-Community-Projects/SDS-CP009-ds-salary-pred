@@ -33,7 +33,7 @@ def load_data(file_path: str):
         return None
 
 def predict( company_value, location_value, job_value) -> float:
-    file_path = "Support_Vector_Regressor_model.pkl"
+    file_path = '/workspaces/SDS-009-ds-salary-pred/web-app/oleg/Support_Vector_Regressor_model.pkl'
     model = SVR()
     model = joblib.load(file_path)
     # model = SVR()
