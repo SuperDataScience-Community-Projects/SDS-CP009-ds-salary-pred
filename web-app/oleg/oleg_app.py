@@ -1,4 +1,4 @@
-import pickle
+import joblib
 import pandas as pd
 import streamlit as st
 
@@ -6,8 +6,7 @@ import streamlit as st
 def load_model():
     file_path = 'web-app/oleg/Support_Vector_Regressor_model.pkl'
     try:
-        with open(file_path, 'rb') as file:
-           loaded_model = pickle.load(file)
+        loaded_model = joblib.load(file_path)
         return(loaded_model)
     except FileNotFoundError:
         print(f"Error: The file '{file_path}' was not found.")
