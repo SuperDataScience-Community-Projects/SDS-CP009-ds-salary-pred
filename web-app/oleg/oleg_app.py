@@ -19,7 +19,7 @@ def load_model():
         print(f"An unexpected error occurred: {e}")
         return None
     
-@st.cache_resource
+
 def load_data(file_path):
     try:
         df = pd.read_csv(file_path)
