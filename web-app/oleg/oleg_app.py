@@ -42,19 +42,20 @@ def app():
             )
     #load data
     model = load_model()
-    # location_df = load_data('locations.csv')
+    
+    # web-app/oleg/companies.csv
+    # /workspaces/SDS-009-ds-salary-pred/web-app/oleg/companies.csv
+
     location_df = load_data('web-app/oleg/companies.csv')
-    job_df = load_data('jobs.csv')
-    company_df = load_data('companies.csv')
-# web-app/oleg/companies.csv
-# /workspaces/SDS-009-ds-salary-pred/web-app/oleg/companies.csv
+    job_df = load_data('web-app/oleg/jobs.csv')
+    company_df = load_data('web-app/oleg/companies.csv')
    
     
-    # with st.sidebar:
+    with st.sidebar:
         #Location
-        # location_name = st.selectbox('Location :', location_df['Location'])
+        location_name = st.selectbox('Location :', location_df['Location'])
         # Retrieve the corresponding value
-        # location_value = location_df[location_df['Location'] == location_name]['Location_Code'].values[0]
+        location_value = location_df[location_df['Location'] == location_name]['Location_Code'].values[0]
             
 
 
