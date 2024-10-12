@@ -1,11 +1,13 @@
 import joblib
 import pandas as pd
 import streamlit as st
+from sklearn.svm import SVR
 
 @st.cache_data
-def load_model():
-    file_path = "Support_Vector_Regressor_model.pkl"
+def load_model() -> SVR:
+    file_path = '/workspaces/SDS-009-ds-salary-pred/web-app/oleg/Support_Vector_Regressor_model.pkl'
     try:
+        loaded_model = SVR()
         loaded_model = joblib.load(file_path)
         return(loaded_model)
     except FileNotFoundError:
@@ -31,9 +33,13 @@ def load_data(file_path: str):
         return None
 
 def predict( company_value, location_value, job_value) -> float:
+    # file_path = '/workspaces/SDS-009-ds-salary-pred/web-app/oleg/Support_Vector_Regressor_model.pkl'
+    # model = SVR()
+    # model = joblib.load(file_path)
+    model = SVR()
     model = load_model()
     input_df=pd.DataFrame([[company_value, location_value, job_value]], columns=['Company_Code', 'Location_Code', 'Job_Code'])
-    avg_salary_predicted = model.predict(input_df)
+    avg_salary_predicted = model.predict(input_df)[0]
     return avg_salary_predicted
 
 
@@ -45,17 +51,14 @@ def app():
             page_icon='💸', 
             layout='wide'
             )
-    #load data
-     
-    # web-app/oleg/companies.csv
-    # /workspaces/SDS-009-ds-salary-pred/web-app/oleg/companies.csv
 
     location_df = load_data('web-app/oleg/locations.csv')
     job_df = load_data('web-app/oleg/jobs.csv')
     company_df = load_data('web-app/oleg/companies.csv')
    
     avg_salary_predicted=0
-    
+    update = False
+
     with st.sidebar:
        #Location
         location_name = st.selectbox('Location :', location_df['Location'].unique())
@@ -74,8 +77,12 @@ def app():
     
         if st.button("Predict"): 
             avg_salary_predicted = predict(company_value, location_value, job_value)
+            update = True
     
-    st.write(avg_salary_predicted)
+    if update:
+        st.write(f'Average Salary for the position of {job_name} at {company_name} company in the {location_name} area is {avg_salary_predicted:.2f}K anually')
+    else:
+        st.write('')
 
 #run application 
 if __name__ == "__main__":
