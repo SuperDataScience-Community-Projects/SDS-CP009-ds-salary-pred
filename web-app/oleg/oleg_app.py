@@ -56,7 +56,7 @@ def app():
         location_name = st.selectbox('Location :', location_df['Location'])
         # Retrieve the corresponding value
         location_value = location_df[location_df['Location'] == location_name]['Location_Code'].values[0]
-            
+        
 
 
         #job
@@ -67,7 +67,7 @@ def app():
         # st.selectbox('Job', [1,2,3])
         # st.selectbox('Company', [1,2,3])
 
-    # st.write = location_value
+    st.write(location_value)
 
 #run application 
 if __name__ == "__main__":
