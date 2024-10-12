@@ -24,32 +24,26 @@ def load_model():
 # @st.cache_resource
 # def load_locations();    
 
-# @st.cache_resource
-# def init_page():
-#     st.set_page_config(
-#         page_title='Salary Prediction',
-#         page_icon='💸', 
-#         layout='wide'
-#         )
-        
 
 
-# execution
+# App execution
+def app():
+    #initialise page
+    st.set_page_config(
+            page_title='Salary Prediction',
+            page_icon='💸', 
+            layout='wide'
+            )
 
-#initialise page
-st.set_page_config(
-        page_title='Salary Prediction',
-        page_icon='💸', 
-        layout='wide'
-        )
+    model = load_model()
 
-model = load_model()
-
-with st.sidebar:
-    st.selectbox('Location', [1,2,3])
-    st.selectbox('Job', [1,2,3])
-    st.selectbox('Company', [1,2,3])
+    with st.sidebar:
+        st.selectbox('Location', [1,2,3])
+        st.selectbox('Job', [1,2,3])
+        st.selectbox('Company', [1,2,3])
 
 
 
-
+#run application
+if __name__ == "__main__":
+    app()
