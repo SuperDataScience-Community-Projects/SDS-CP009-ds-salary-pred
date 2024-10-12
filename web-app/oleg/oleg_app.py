@@ -36,6 +36,8 @@ def predict( company_value, location_value, job_value) -> float:
     input_df=pd.DataFrame([[company_value, location_value, job_value]], columns=['Company_Code', 'Location_Code', 'Job_Code'])
     avg_salary_predicted = model.predict(input_df)
     return avg_salary_predicted
+
+
 # App execution
 def app():
     #initialise page
@@ -53,6 +55,7 @@ def app():
     job_df = load_data('web-app/oleg/jobs.csv')
     company_df = load_data('web-app/oleg/companies.csv')
    
+   avg_salary_predicted=0
     
     with st.sidebar:
        #Location
