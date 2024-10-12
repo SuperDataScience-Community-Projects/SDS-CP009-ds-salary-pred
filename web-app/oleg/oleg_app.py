@@ -52,13 +52,21 @@ def app():
    
     
     with st.sidebar:
-        #Location
-        location_name = st.selectbox('Location :', location_df['Location'])
+       #Location
+        location_name = st.selectbox('Location :', location_df['Location'].unique())
         # Retrieve the corresponding value
         location_value = location_df[location_df['Location'] == location_name]['Location_Code'].values[0]
         
-
-
+       #Job
+        job_name = st.selectbox('Job :', job_df['Job Category'].unique())
+        # Retrieve the corresponding value
+        job_value = job_df[job_df['Job Category'] == job_name]['Job_Code'].values[0]
+    
+       #Company
+        company_name = st.selectbox('Company :', company_df['Company'].unique())
+        # Retrieve the corresponding value
+        company_value = company_df[company_df['Company'] == company_name]['Company_Code'].values[0]
+    
         #job
 
         #company
@@ -67,7 +75,7 @@ def app():
         # st.selectbox('Job', [1,2,3])
         # st.selectbox('Company', [1,2,3])
 
-    st.write(location_value)
+
 
 #run application 
 if __name__ == "__main__":
