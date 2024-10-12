@@ -1,0 +1,581 @@
+Company_Code,Company
+0,ViewSoft
+1,Workiva
+2,"Garmin International, Inc."
+3,Snapchat
+4,Vitesco Technologies Group AG
+5,Spotify
+6,Infor
+7,Amerisoft Corporation
+8,WHOOP
+9,PFF
+10,Salesforce
+11,"HealthMine Services, Inc."
+12,Honeywell
+13,Legrand AV
+14,Athenahealth
+15,Amex
+16,SOFT LABS NA
+17,Hertz
+18,Megaport
+19,"7-Eleven, Inc."
+20,"Summit Technologies, Inc."
+21,Adobe
+22,The MITRE Corporation
+23,Boston Children's Hospital
+24,Ahold Delhaize USA
+25,Artera Technologies
+26,Samsung Electronics
+27,IPG Photonics
+28,Crafty
+29,"Crunchyroll, LLC"
+30,LEGO
+31,Principal Financial Group
+32,INTEL
+33,Hasbro
+34,Software Engineering Institute
+35,University of Dayton
+36,MIT
+37,Amazon.com Services LLC
+38,DaqScribe Solutions
+39,West Virginia University
+40,McKesson
+41,Noblis
+42,eimagine
+43,CSL SOFTWARE SOLUTIONS
+44,Chewy
+45,ERPA
+46,Afterpay
+47,Harvard University
+48,Brooks Automation
+49,DLRdmv
+50,Movius Interactive Corporation
+51,State Street
+52,"Sonalysts, Inc."
+53,"Preco, LLC"
+54,HealthStream
+55,Aptiv plc
+56,Zipongo
+57,Snowflake
+58,Staffed4U
+59,Honeycomb.io
+60,Topaz Labs
+61,WEG Electric Corp
+62,Brown and Caldwell
+63,Vertafore
+64,"Aerodyne Industries, LLC"
+65,KAIROS Inc
+66,S3
+67,"J. Paul Getty Trust, The"
+68,Rover.com
+69,University of Oregon
+70,dōTERRA International
+71,AHU Technologies
+72,ALSTOM
+73,Jack Henry & Associates
+74,ISPA Technology
+75,"Universal Health Services, Inc. - Corporate Office"
+76,Relias
+77,Tickrs Clearing
+78,CTC Group
+79,GoTab Inc
+80,ILOGIC INC
+81,CSX
+82,Synergy ECP
+83,M&T Bank
+84,Cardlytics
+85,"Stefanini, Inc"
+86,Innovative Systems
+87,Parabola
+88,Vibrint
+89,Millennium Management
+90,Sagitec
+91,Innovien Solutions
+92,Ocean Power Technologies Inc
+93,Riverside Research Institute
+94,Uber Freight
+95,Diverse Career Solutions
+96,Likewize
+97,MassMutual Ascend
+98,Washington DC government
+99,AnaVation
+100,3R Info
+101,Strategic Mission Elements
+102,"IPSecure, Inc."
+103,RELX
+104,Solventum
+105,Focus Technology Solutions Inc
+106,Two Six Technologies
+107,"Adams, Inc."
+108,CPS Insurance Services
+109,Cephas
+110,Chubb
+111,Consumers Energy
+112,U.S. Bank National Association
+113,MedImpact Healthcare Systems
+114,IMC Financial Markets
+115,Truveta
+116,"Signature Science, LLC"
+117,JYG Innovations
+118,Vensit
+119,Independent Software
+120,"Visionist, Inc."
+121,NCR
+122,Clearwater Analytics
+123,"Technical Intelligence Solutions, LLC"
+124,CVS Health
+125,"Delta Defense, LLC"
+126,Koalafi
+127,No.Inc
+128,f5
+129,Arcadia Science
+130,Artint Knowledge Tech
+131,Castellum Inc
+132,Instacart
+133,WALGREENS
+134,Duquesne Light
+135,Super Micro Computer
+136,UCare
+137,CyberCore Technologies
+138,CoinFlip
+139,BI Labs
+140,Sahbi Systems
+141,Cultura Technologies Inc
+142,Excelacom
+143,Cityblock Health
+144,Rocket Software
+145,Huntington Ingalls Industries Inc.
+146,Intuitive Machines LLC
+147,Equifax
+148,Akamai
+149,Mailprotector
+150,Blockit Now Inc
+151,TENICA and Associates LLC
+152,Arch Capital Group Ltd.
+153,Lynker Corporation
+154,YouTube
+155,Perforce Software
+156,World Vision USA
+157,Featurespace
+158,Bigbear.ai
+159,"Benistar Administrative Services, Inc."
+160,State of Colorado Job Opportunities
+161,Intellisource Colorado LLC
+162,NBCUniversal
+163,Thompson Gray Inc.
+164,Origence
+165,Medius
+166,CNH Industrial
+167,Fusion Plus Solutions Inc.
+168,University of Florida
+169,Northwestern Mutual
+170,Hubbell Incorporated
+171,Valkyrie Enterprises
+172,Decision Six
+173,Microsoft
+174,Ateliere Creative Technologies
+175,OpenAI
+176,Splunk
+177,Sasken
+178,RealmOne
+179,The Wolf Works LLC
+180,"Aflac, Incorporated"
+181,RingCentral
+182,Dallas Area Rapid Transit
+183,W R Systems
+184,"CARECRAFT, INC"
+185,SpecialT Tech
+186,"Hottinger, Bruel & Kjaer"
+187,"CPS Solutions, LLC"
+188,Northwestern Memorial Healthcare
+189,The Swift Group
+190,ASUS Computer International
+191,Persistent Systems
+192,Cedar Inc
+193,Nautilus Hyosung America Inc
+194,Blue Origin
+195,West Bend Insurance Company
+196,JBT Corporation
+197,Allied Business Consulting
+198,"Chick-fil-A, Inc."
+199,"US AMR-Jones Lang LaSalle Americas, Inc."
+200,Smart IMS
+201,PayPal
+202,Hewlett Packard
+203,New River Systems Corporation
+204,"Modern Technology Solutions, Inc."
+205,PQSecure Technologies
+206,OnMed
+207,Grote Industries
+208,Cloud Software Group
+209,NationMind Infoservices Pvt Ltd
+210,Arrowstreet Capital
+211,Favorited
+212,Strategic Thermal Labs
+213,IdolSoft
+214,Verily
+215,Colonial Pipeline Company
+216,Leader Communications Inc
+217,CliftonLarsonAllen
+218,BAE Systems
+219,Nodal Exchange
+220,Gomez & Companies
+221,"T-Mobile USA, Inc."
+222,Pressco Technology
+223,Scentsy Inc
+224,STRATASCORP
+225,Toyota Research Institute
+226,Gelber Group
+227,"PeopleTec, Inc."
+228,Ingrain Systems Inc.
+229,Carrier
+230,Soar Technology
+231,Red Ventures
+232,"Messenger, LLC"
+233,Nelnet
+234,Slate Magazine
+235,Airgas
+236,Umbra
+237,Uber
+238,Collaborative Robotics
+239,Werfen
+240,"Canon Medical Research USA, Inc"
+241,Raytheon
+242,Hudson River Trading
+243,Whisker
+244,Mastercard
+245,Savannah River Mission Completion
+246,Mill-Max
+247,Disney Entertainment & ESPN Technology
+248,Coca-Cola
+249,Kaleido
+250,Lufburrow & Co
+251,Boost Tech
+252,VANTACA
+253,Veracity Engineering
+254,AppLovin
+255,Honda Research Institute USA
+256,Activision
+257,thatgamecompany
+258,BNY Mellon
+259,Recruiting From Scratch
+260,"Akina, Inc."
+261,Vonnen
+262,Capgemini
+263,Infosys
+264,"Link, LLC"
+265,Autodesk
+266,BCT LLC
+267,JPMorgan Chase & Co
+268,WR Systems
+269,Acuity Brands
+270,Cisco Systems
+271,"Vivint, Inc."
+272,Caelum Research Corporation
+273,Oracle
+274,Fidelity Investments
+275,Colorado State University
+276,Bayer
+277,USAA
+278,Accenture Federal Services
+279,Gundersen Health System
+280,"JRC Integrated Systems, LLC"
+281,XL Softek
+282,kasmo cloud solutions
+283,"ICR, Inc."
+284,Workday
+285,360care
+286,DKW Communications
+287,"SICK, Inc."
+288,Antithesis
+289,Rekuten Global
+290,Tencent
+291,Zoox
+292,Innovative Defense Technologies (IDT)
+293,VETERANS ENGINEERING INCORPORATED
+294,Solvere Technical Group
+295,"IRALOGIX,Inc"
+296,Nava
+297,GE HEALTHCARE
+298,TC Energy
+299,Schlumberger
+300,FLASH Technology Group
+301,Fairfax County Public Schools
+302,Scholarly
+303,Burst Inc.
+304,USN Technical Associates
+305,SNC
+306,Laiba Technologies
+307,Teamups
+308,Delta Dental Ins.
+309,UiPath
+310,Atlas Copco Tools & Assembly Systems LLC
+311,ANB Sourcing LLC
+312,McIntire Solutions
+313,Pennymac
+314,Literati
+315,"Rochester Software Associates, Inc."
+316,Plaid
+317,TigerGraph
+318,Resilio Inc.
+319,Candid
+320,Radiance Technologies
+321,Fabletics
+322,Fractal Analytics
+323,Microchip Technology
+324,York Space Systems
+325,Software Productivity Strategists
+326,NeuroPace
+327,OceanFrogs
+328,"iconectiv, LLC."
+329,The Aerospace Corporation
+330,Fetch Package
+331,Zenith Services
+332,Matthews International Corporation
+333,NVIDIA
+334,PingWind
+335,Versaterm
+336,Apollo Technology Solutions LLC
+337,Navrit Creation
+338,Schneider Electric
+339,Akira Technologies Inc.
+340,Space Coast Intelligent Solutions
+341,Credo
+342,9th networks Inc
+343,Tuvoli
+344,Walter P Moore
+345,LinQuest Corporation
+346,CodeSignal
+347,Dupli Envelope & Graphics
+348,Coinbase
+349,LSEG (London Stock Exchange Group)
+350,Inabia Software & Consulting Inc.
+351,PMall
+352,Alloy
+353,QinetiQ US
+354,Caterpillar
+355,"Jason Pharmaceuticals, Inc."
+356,IntelliBridge LLC
+357,Snyk
+358,Vertex Professional Service LLC
+359,"deciBel Research, Inc."
+360,COMSOL Inc.
+361,Hero Facility Services
+362,QED Systems LLC
+363,Kasasa
+364,"Delta Air Lines, Inc."
+365,HAN IT
+366,Innovative Solutions and Support
+367,Promega
+368,Revenue Management Solutions Llc
+369,Astrion
+370,Broadridge
+371,Zurn Elkay Water Solutions
+372,Florida State College at Jacksonville
+373,Q9Software
+374,The Bank of New York Mellon Corporation
+375,Grand Canyon Education
+376,Captivation Software
+377,DocuSign
+378,"Canon Medical Research USA, Inc."
+379,Standard Bots
+380,American AgCredit
+381,KAPSCH
+382,Prevail
+383,DCS Corp
+384,Consensus Health
+385,Rippling
+386,ACI Worldwide
+387,"Engineering Technology Associates, Inc."
+388,Fusion Innovation
+389,"Clarity Innovations, LLC"
+390,RippleMatch Opportunities
+391,Power3 Solutions and Partnering Companies
+392,Datadog
+393,PACCAR
+394,Front
+395,Northrop Grumman
+396,Pegasystems
+397,Lawrence Berkeley National Laboratory
+398,Cargill
+399,GLOBALFOUNDRIES
+400,TRU47
+401,Gopuff
+402,Camelot Integrated Solutions Inc.
+403,BOEING
+404,Publix
+405,Experian
+406,ByteDance
+407,Alterra Mountain Company
+408,Amazon Advertising LLC
+409,Bose
+410,Macy’s
+411,DraftKings
+412,GE Appliances
+413,Quantum Systems Inc
+414,"Kaseware, Inc."
+415,Fanatics Inc.
+416,Accrete.AI
+417,Roku
+418,Early Warning Services
+419,Grainger
+420,Costco Wholesale
+421,Mochi Health
+422,Jacobs
+423,Boeing Intelligence & Analytics
+424,NetApp
+425,Alphataraxia
+426,Johns Hopkins University
+427,University of Vermont
+428,Federal Reserve Bank of Dallas
+429,"Grammarly, Inc."
+430,SCD Information Technology
+431,Clarity Innovations
+432,Volvo Group
+433,Calspan Corporation
+434,Root//Source
+435,"HireIO, Inc."
+436,PAC GROUP LLC
+437,Emergent Software
+438,Intone Networks
+439,CARTIKTECH LLC
+440,Abbott Laboratories
+441,Prove
+442,Schweitzer Engineering Laboratories
+443,Themis Insight
+444,Hop Labs
+445,"Hawaiian Airlines, Inc."
+446,Visa
+447,Oliver Wyman Group
+448,Morgan Stanley
+449,Multi State Lottery Association
+450,EOG Resources
+451,BAXTER
+452,Geon Technologies
+453,TDI Technologies
+454,DAIKIN COMFORT TECHNOLOGIES MFG LP
+455,Wise
+456,Nyla Technology Solutions
+457,Wellington Management
+458,"Vizient, Inc."
+459,Leidos
+460,ELEVI Associates
+461,ASCENDING
+462,Trellint
+463,Lockheed Martin
+464,"Trusted Space, Inc."
+465,"Availity, LLC."
+466,BorgWarner
+467,Ford Motor Company
+468,Forterra
+469,Epsilon
+470,Logistics Management Institute
+471,Sirius XM
+472,Warner Bros. Discovery
+473,Peloton
+474,Corteva
+475,IntraFi Network
+476,PSEG
+477,Ryzlink DBA Chuwa America
+478,Trane Technologies
+479,Discord
+480,Tesla
+481,First American Financial Corporation
+482,Collins Aerospace
+483,Roche
+484,Qualtrics
+485,Edward Rose & Sons
+486,Michelin
+487,Wipro
+488,Harley-Davidson
+489,"VIZIO, Inc."
+490,Geneva Technologies Inc.
+491,ElectronX
+492,Sabre Engineering
+493,Thermoflow
+494,"Twitch Interactive, Inc."
+495,Adtran
+496,Oncorre
+497,NMG Technology Services
+498,Invisible Technologies
+499,Metas Solutions
+500,"GAP Solutions, Inc."
+501,InterImage
+502,Tickets.com
+503,Embecta
+504,Space Systems Integration
+505,Cash App
+506,Annapurna Labs (U.S.) Inc.
+507,Index Engines Inc.
+508,Squarespace
+509,"Advanced Micro Devices, Inc"
+510,"Flow Systems, Inc"
+511,Teradyne
+512,Meta
+513,Yellow Duck Technologies Inc.
+514,Ops Tech Alliance
+515,CDK Global
+516,IAB Solutions LLC
+517,General Assembly
+518,Cotiviti
+519,Braum's
+520,Cummings Aerospace Inc
+521,T.M. Bier & Associates
+522,Zelis
+523,TikTok
+524,Eaton
+525,Boston Consulting Group
+526,Sage
+527,Neurable
+528,ASM International
+529,Galvion
+530,Prophet Software
+531,Ansira
+532,Elder Research
+533,3 Reasons Consulting
+534,"AB2 Consulting, Inc."
+535,University of Maryland
+536,CPI Card Group
+537,Simplot
+538,Walmart Advanced Systems and Robotics
+539,NORC at the University of Chicago
+540,WSSC Water
+541,RVO Health
+542,Wisenbaker Builder Services
+543,Optum
+544,SoFi
+545,Micron
+546,Boeing
+547,bellelynn
+548,Bertrandt
+549,EAI Technologies
+550,Mahlet
+551,REV Robotics
+552,"IntelliGenesis, LLC"
+553,Enersys
+554,University of Washington
+555,CEDENT
+556,Bank of America
+557,Federal Reserve Bank of Boston
+558,Apriva
+559,ASEC
+560,T. Rowe Price
+561,S&S Activewear LLC
+562,Peterson Technologies
+563,"LongPath Technologies, Inc."
+564,Gradient
+565,ENVISN INCORPORATED
+566,Intersoft Data Labs
+567,Digital Insight Printing
+568,Beshenich Muir & Associates Llc
+569,Powermind Solutions
+570,ShipperHQ
+571,Bryn Neil
+572,"Amazon Web Services, Inc."
+573,"Bio-Rad Laboratories, Inc."
+574,"Audacy, Inc."
+575,CyberKorp
+576,NCR Atleos
+577,Electronic Warfare Associates
+578,"BillGO, Inc."
+579,Genesys
