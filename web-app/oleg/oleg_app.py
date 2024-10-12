@@ -61,7 +61,8 @@ def app():
     company_df = load_data('web-app/oleg/companies.csv')
    
     avg_salary_predicted=0
-    
+    update = False
+
     with st.sidebar:
        #Location
         location_name = st.selectbox('Location :', location_df['Location'].unique())
