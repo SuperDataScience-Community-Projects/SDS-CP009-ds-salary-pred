@@ -80,9 +80,13 @@ def app():
     
         if st.button("Predict"): 
             avg_salary_predicted = predict(company_value, location_value, job_value)
+            update = True
     
-    st.write(f'Average Salary for the position of {job_name} at {company_name} company in the {location_name} area is {avg_salary_predicted:.2f}K anually')
-
+    if update:
+        st.write(f'Average Salary for the position of {job_name} at {company_name} company in the {location_name} area is {avg_salary_predicted:.2f}K anually')
+    else
+        st.write('')
+        
 #run application 
 if __name__ == "__main__":
     app()
