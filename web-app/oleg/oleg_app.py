@@ -24,20 +24,24 @@ def load_model():
 # @st.cache_resource
 # def load_locations();    
 
-@st.cache_resource
-def init_page():
-    st.set_page_config(
-        page_title='Salary Prediction',
-        page_icon='💸', 
-        layout='wide'
-        )
+# @st.cache_resource
+# def init_page():
+#     st.set_page_config(
+#         page_title='Salary Prediction',
+#         page_icon='💸', 
+#         layout='wide'
+#         )
         
 
 
 # execution
 
 #initialise page
-init_page()
+st.set_page_config(
+        page_title='Salary Prediction',
+        page_icon='💸', 
+        layout='wide'
+        )
 
 model = load_model()
 
