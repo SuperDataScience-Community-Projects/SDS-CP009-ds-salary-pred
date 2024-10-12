@@ -5,7 +5,7 @@ from sklearn.svm import SVR
 
 @st.cache_data
 def load_model() -> SVR:
-    file_path = "Support_Vector_Regressor_model.pkl"
+    file_path = '/workspaces/SDS-009-ds-salary-pred/web-app/oleg/Support_Vector_Regressor_model.pkl'
     try:
         loaded_model = SVR()
         loaded_model = joblib.load(file_path)
@@ -33,11 +33,11 @@ def load_data(file_path: str):
         return None
 
 def predict( company_value, location_value, job_value) -> float:
-    file_path = '/workspaces/SDS-009-ds-salary-pred/web-app/oleg/Support_Vector_Regressor_model.pkl'
-    model = SVR()
-    model = joblib.load(file_path)
+    # file_path = '/workspaces/SDS-009-ds-salary-pred/web-app/oleg/Support_Vector_Regressor_model.pkl'
     # model = SVR()
-    # model = load_model()
+    # model = joblib.load(file_path)
+    model = SVR()
+    model = load_model()
     input_df=pd.DataFrame([[company_value, location_value, job_value]], columns=['Company_Code', 'Location_Code', 'Job_Code'])
     avg_salary_predicted = model.predict(input_df)
     return avg_salary_predicted
