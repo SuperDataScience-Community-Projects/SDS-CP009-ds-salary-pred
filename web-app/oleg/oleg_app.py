@@ -50,9 +50,9 @@ def app():
     
     with st.sidebar:
         #Location
-        # location_name = st.selectbox('Location :', location_df['Location'])
+        location_name = st.selectbox('Location :', location_df['Location'])
         # Retrieve the corresponding value
-        # location_value = location_df[location_df['Location'] == location_name]['Location_Code'].values[0]
+        location_value = location_df[location_df['Location'] == location_name]['Location_Code'].values[0]
             
 
 
@@ -60,9 +60,9 @@ def app():
 
         #company
 
-        st.selectbox('Location', ["A1",2,3])
-        st.selectbox('Job', [1,2,3])
-        st.selectbox('Company', [1,2,3])
+        # st.selectbox('Location', ["A1",2,3])
+        # st.selectbox('Job', [1,2,3])
+        # st.selectbox('Company', [1,2,3])
 
     # st.write = location_value
 
