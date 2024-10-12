@@ -84,9 +84,9 @@ def app():
     
     if update:
         st.write(f'Average Salary for the position of {job_name} at {company_name} company in the {location_name} area is {avg_salary_predicted:.2f}K anually')
-    else
+    else:
         st.write('')
-        
+
 #run application 
 if __name__ == "__main__":
     app()
