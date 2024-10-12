@@ -39,7 +39,7 @@ def predict( company_value, location_value, job_value) -> float:
     model = SVR()
     model = load_model()
     input_df=pd.DataFrame([[company_value, location_value, job_value]], columns=['Company_Code', 'Location_Code', 'Job_Code'])
-    avg_salary_predicted = model.predict(input_df)
+    avg_salary_predicted = model.predict(input_df)[0]
     return avg_salary_predicted
 
 
@@ -81,7 +81,7 @@ def app():
         if st.button("Predict"): 
             avg_salary_predicted = predict(company_value, location_value, job_value)
     
-    st.write(f'Average Salary for the position of {job_name} at {company_name} company in the {location_name} area is {avg_salary_predicted[0]}K anually')
+    st.write(f'Average Salary for the position of {job_name} at {company_name} company in the {location_name} area is {avg_salary_predicted}K anually')
 
 #run application 
 if __name__ == "__main__":
