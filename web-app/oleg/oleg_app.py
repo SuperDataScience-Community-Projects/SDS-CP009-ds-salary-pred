@@ -38,7 +38,7 @@ def app():
     model = load_model()
 
     with st.sidebar:
-        st.selectbox('Location', [A1,2,3])
+        st.selectbox('Location', ["A1",2,3])
         st.selectbox('Job', [1,2,3])
         st.selectbox('Company', [1,2,3])
 
