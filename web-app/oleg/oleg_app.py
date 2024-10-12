@@ -19,19 +19,27 @@ def load_model():
         return None
     
 
-def load_data(file_path: str):
-    try:
-        df = pd.read_csv(file_path)
-        return df
-    except FileNotFoundError:
-        st.error(f"Error: The file '{file_path}' was not found.")
-        return None
-    except Exception as e:
-        st.error(f"An unexpected error occurred: {e}")
-        return None
+# def load_data(file_path: str):
+#     try:
+#         df = pd.read_csv(file_path)
+#         return df
+#     except FileNotFoundError:
+#         st.error(f"Error: The file '{file_path}' was not found.")
+#         return None
+#     except Exception as e:
+#         st.error(f"An unexpected error occurred: {e}")
+#         return None
 
 def predict( company_value, location_value, job_value) -> float:
-    model = load_model()
+# --
+    try:
+        model= pd.read_csv(file_path)
+    except FileNotFoundError:
+        st.error(f"Error: The file '{file_path}' was not found.")
+    except Exception as e:
+        st.error(f"An unexpected error occurred: {e}")
+# --
+    # model = load_model()
     input_df=pd.DataFrame([[company_value, location_value, job_value]], columns=['Company_Code', 'Location_Code', 'Job_Code'])
     avg_salary_predicted = model.predict(input_df)
     return avg_salary_predicted
