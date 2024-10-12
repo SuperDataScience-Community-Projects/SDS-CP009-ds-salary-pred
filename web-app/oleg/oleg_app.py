@@ -35,6 +35,7 @@ def predict( company_value, location_value, job_value) -> float:
     file_path = 'workspaces/SDS-009-ds-salary-pred/notebooks/oleg/Support_Vector_Regressor_model.pkl'
     try:
         model = joblib.load(file_path)
+        
     except FileNotFoundError:
         print(f"Error: The file '{file_path}' was not found.")  
     except IOError:
