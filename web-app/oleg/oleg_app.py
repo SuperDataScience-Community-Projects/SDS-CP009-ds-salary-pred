@@ -42,7 +42,7 @@ def predict( company_value, location_value, job_value) -> float:
         print(f"An unexpected error occurred: {e}")
     
        
-    model = load_model()
+    # model = load_model()
     input_df=pd.DataFrame([[company_value, location_value, job_value]], columns=['Company_Code', 'Location_Code', 'Job_Code'])
     avg_salary_predicted = model.predict(input_df)
     return avg_salary_predicted
