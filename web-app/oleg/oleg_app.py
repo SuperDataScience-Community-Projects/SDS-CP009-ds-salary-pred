@@ -4,7 +4,7 @@ import streamlit as st
 from sklearn.svm import SVR
 
 @st.cache_data
-def load_model():
+def load_model() -> SVR:
     file_path = "Support_Vector_Regressor_model.pkl"
     try:
         loaded_model = SVR()
