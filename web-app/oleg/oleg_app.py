@@ -42,6 +42,19 @@ def predict( company_value, location_value, job_value) -> float:
     avg_salary_predicted = model.predict(input_df)[0]
     return avg_salary_predicted
 
+def predict_all_jobs(company_value, location_value, jobs_df) -> pd.DataFrame:
+    model = SVR()
+    model = load_model()
+    input_df=jobs_df
+    input_df['Company_code'] = company_value
+    input_df['Location_code'] = location_value
+    
+    input_df.drop(columns=['Job Category'], inplace=True)
+
+    input_df=pd.DataFrame([[company_value, location_value, job_value]], columns=['Company_Code', 'Location_Code', 'Job_Code'])
+    avg_salaries_predicted = model.predict(input_df)
+    return avg_salaries_predicted
+
 
 # App execution
 def app():
@@ -68,7 +81,7 @@ def app():
        #Job
         job_name = st.selectbox('Job :', job_df['Job Category'].unique())
         # Retrieve the corresponding value
-        job_value = job_df[job_df['Job Category'] == job_name]['Job_Code'].values[0]
+        job_value = job_df[c['Job Category'] == job_name]['Job_Code'].values[0]
     
        #Company
         company_name = st.selectbox('Company :', company_df['Company'].unique())
@@ -77,6 +90,7 @@ def app():
     
         if st.button("Predict"): 
             avg_salary_predicted = predict(company_value, location_value, job_value)
+            avg_salaries_predicted = predict_all_jobs(company_value, location_value, avg_salaries_predicted)
             update = True
     
     if update:
