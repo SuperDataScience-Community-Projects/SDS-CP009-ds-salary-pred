@@ -91,7 +91,7 @@ def app():
     
         if st.button("Predict"): 
             avg_salary_predicted = predict(company_value, location_value, job_value)
-            avg_salaries_predicted = predict_all_jobs(company_value, location_value, avg_salaries_predicted)
+            avg_salaries_predicted = predict_all_jobs(company_value, location_value, job_df)
             update = True
     
     if update:
