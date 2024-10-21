@@ -84,7 +84,7 @@ def app():
 # ///
         # Initialize the Nominatim geocoder
         geolocator = Nominatim(user_agent="city_locator")
-        location = geolocator.geocode(city_name)
+        location = geolocator.geocode(location_name)
         # Create a map centered on the city's location
         city_location = pdk.Deck(
             map_style='mapbox://styles/mapbox/light-v9',
