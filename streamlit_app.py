@@ -5,9 +5,7 @@ from sklearn.svm import SVR
 
 @st.cache_data
 def load_model() -> SVR:
-    
-    # file_path = '/workspaces/SDS-009-ds-salary-pred/web-app/oleg/Support_Vector_Regressor_model.pkl'
-    file_path = 'web-app/oleg/Support_Vector_Regressor_model.pkl'
+    file_path = '/workspaces/SDS-009-ds-salary-pred/web-app/oleg/Support_Vector_Regressor_model.pkl'
     
     try:
         loaded_model = SVR()
