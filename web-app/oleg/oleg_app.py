@@ -44,7 +44,7 @@ def predict( company_value, location_value, job_value) -> float:
     avg_salary_predicted = model.predict(input_df)[0]
     return avg_salary_predicted
 
-def predict_all_jobs(company_value, location_value, jobs_df):
+def predict_all_jobs(company_value, location_value, jobs_df) -> pd.DataFrame:
     model = SVR()
     model = load_model()
     input_df = pd.DataFrame(columns=['Company_Code', 'Location_Code', 'Job_Code'])
@@ -52,9 +52,11 @@ def predict_all_jobs(company_value, location_value, jobs_df):
     input_df['Company_Code'] = company_value
     input_df['Location_Code'] = location_value
  
-
-    avg_salaries_predicted = model.predict(input_df)
-    return avg_salaries_predicted
+    output_df = pd.DataFrame(columns=['Company_Code', 'Location_Code', 'Job_Code','Avg'])
+    output_df = input_df
+    output_df = model.predict(input_df)
+    # avg_salaries_predicted = model.predict(input_df)
+    return output_df
 
 
 # App execution
@@ -124,7 +126,7 @@ def app():
 
         # Create a bar chart using matplotlib
         fig, ax = plt.subplots()
-        ax.bar(avg_salaries_predicted['Job_Code'], avg_salaries_predicted['Avg. Salary'])
+        ax.bar(avg_salaries_predicted['Job_Code'], avg_salaries_predicted['Avg'])
 # , columns=['Company_Code', 'Location_Code', 'Job_Code']
         # Set labels
         ax.set_xlabel('Job Title')
@@ -133,6 +135,16 @@ def app():
 
         # Show the chart in Streamlit
         st.pyplot(fig)
+
+        # Plotting the diagram using matplotlib
+        plt.figure(figsize=(8, 5))
+        plt.bar(avg_salaries_predicted['Job_Code'], df['Predicted_Average_Salary'], color='skyblue')
+
+        # Set chart labels and title
+        plt.xlabel('Job Code')
+        plt.ylabel('Predicted Average Salary ($)')
+        plt.title('Predicted Average Salary by Job Code')
+
 
 
 # ///<
