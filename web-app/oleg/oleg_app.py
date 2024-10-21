@@ -3,10 +3,19 @@ import pandas as pd
 import streamlit as st
 from sklearn.svm import SVR
 
+from geopy.geocoders import Nominatim
+import pydeck as pdk
+
+def get_coordinates(city_name: str):
+    geolocator = Nominatim(user_agent="city_locator")
+    location = geolocator.geocode(city_name)
+    if location:
+        return (location.latitude, location.longitude)
+    else:
+        return None
+
 @st.cache_data
 def load_model() -> SVR:
-    
-    # file_path = '/workspaces/SDS-009-ds-salary-pred/web-app/oleg/Support_Vector_Regressor_model.pkl'
     file_path = 'web-app/oleg/Support_Vector_Regressor_model.pkl'
     
     try:
@@ -23,7 +32,7 @@ def load_model() -> SVR:
         print(f"An unexpected error occurred: {e}")
         return None
     
-
+@st.cache_data
 def load_data(file_path: str):
     try:
         df = pd.read_csv(file_path)
@@ -36,9 +45,6 @@ def load_data(file_path: str):
         return None
 
 def predict( company_value, location_value, job_value) -> float:
-    # file_path = '/workspaces/SDS-009-ds-salary-pred/web-app/oleg/Support_Vector_Regressor_model.pkl'
-    # model = SVR()
-    # model = joblib.load(file_path)
     model = SVR()
     model = load_model()
     input_df=pd.DataFrame([[company_value, location_value, job_value]], columns=['Company_Code', 'Location_Code', 'Job_Code'])
@@ -83,6 +89,35 @@ def app():
             update = True
     
     if update:
+
+# ///
+        # Initialize the Nominatim geocoder
+        geolocator = Nominatim(user_agent="city_locator")
+        location = geolocator.geocode(city_name)
+        # Create a map centered on the city's location
+        city_location = pdk.Deck(
+            map_style='mapbox://styles/mapbox/light-v9',
+            initial_view_state=pdk.ViewState(
+                latitude=location.latitude,
+                longitude=location.longitude,
+                zoom=10,
+                pitch=50,
+            ),
+            layers=[
+                pdk.Layer(
+                    'ScatterplotLayer',
+                    data=[{"lat": location.latitude, "lon": location.longitude}],
+                    get_position='[lon, lat]',
+                    get_color='[200, 30, 0, 160]',
+                    get_radius=10000,
+                ),
+            ],
+        )
+        
+        # Show the map
+        st.pydeck_chart(city_location)
+
+# ///
         st.write(f'Average Salary for the position of {job_name} at {company_name} company in the {location_name} area is {avg_salary_predicted:.2f}K anually')
     else:
         st.write('')
