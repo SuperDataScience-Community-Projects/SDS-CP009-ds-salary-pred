@@ -124,7 +124,7 @@ def app():
 
         # Create a bar chart using matplotlib
         fig, ax = plt.subplots()
-        ax.bar(avg_salaries_predicted['Job Category'], avg_salaries_predicted['Avg. Salary'])
+        ax.bar(avg_salaries_predicted['Job_Code'], avg_salaries_predicted['Avg. Salary'])
 # , columns=['Company_Code', 'Location_Code', 'Job_Code']
         # Set labels
         ax.set_xlabel('Job Title')
