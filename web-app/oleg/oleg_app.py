@@ -1,7 +1,7 @@
 import joblib
 import pandas as pd
 import streamlit as st
-from sklearn.svm import SVr
+from sklearn.svm import SVR
 
 @st.cache_data
 def load_model() -> SVR:
