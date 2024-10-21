@@ -122,35 +122,8 @@ def app():
         
         # Show the map
         st.pydeck_chart(city_location)
-# ///>
-
-#         # Create a bar chart using matplotlib
-#         fig, ax = plt.subplots()
-#         ax.bar(avg_salaries_predicted['Job_Code'], avg_salaries_predicted['Avg'])
-# # , columns=['Company_Code', 'Location_Code', 'Job_Code']
-#         # Set labels
-#         ax.set_xlabel('Job Title')
-#         ax.set_ylabel('Avg. Salary ($)')
-#         ax.set_title('Salaries by Job Category')
-
-#         # Show the chart in Streamlit
-#         st.pyplot(fig)
-# step2
-        # # Plotting the diagram using matplotlib
-        # fig = plt.figure(figsize=(8, 5))
-        # plt.bar(avg_salaries_predicted['Job_Code'], avg_salaries_predicted['Avg'], color='skyblue')
-
-        # # Set chart labels and title
-        # plt.xlabel('Job Code')
-        # plt.ylabel('Predicted Average Salary ($)')
-        # plt.title('Predicted Average Salary by Job Code')
- 
-        # # Show the chart in Streamlit
-        # st.pyplot(fig)
         st.dataframe(avg_salaries_predicted)
 
-
-# ///<
         st.write(f'Average Salary for the position of {job_name} at {company_name} company in the {location_name} area is {avg_salary_predicted:.2f}K anually')
     else:
         st.write('')
