@@ -2,4 +2,3 @@ streamlit
 pandas
 joblib
 scikit-learn
-SKLEARN_ALLOW_DEPRECATED_SKLEARN_PACKAGE_INSTALL==True
