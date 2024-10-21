@@ -51,7 +51,7 @@ def predict_all_jobs(company_value, location_value, jobs_df) -> pd.DataFrame:
     input_df['Company_Code'] = company_value
     input_df['Location_Code'] = location_value
     
-    # input_df.drop(columns=['Job_Category'], inplace=True)
+    input_df.drop(columns=['Job Category'], inplace=True)
 
     avg_salaries_predicted = model.predict(input_df)
     return avg_salaries_predicted
