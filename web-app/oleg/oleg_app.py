@@ -124,26 +124,29 @@ def app():
         st.pydeck_chart(city_location)
 # ///>
 
-        # Create a bar chart using matplotlib
-        fig, ax = plt.subplots()
-        ax.bar(avg_salaries_predicted['Job_Code'], avg_salaries_predicted['Avg'])
-# , columns=['Company_Code', 'Location_Code', 'Job_Code']
-        # Set labels
-        ax.set_xlabel('Job Title')
-        ax.set_ylabel('Avg. Salary ($)')
-        ax.set_title('Salaries by Job Category')
+#         # Create a bar chart using matplotlib
+#         fig, ax = plt.subplots()
+#         ax.bar(avg_salaries_predicted['Job_Code'], avg_salaries_predicted['Avg'])
+# # , columns=['Company_Code', 'Location_Code', 'Job_Code']
+#         # Set labels
+#         ax.set_xlabel('Job Title')
+#         ax.set_ylabel('Avg. Salary ($)')
+#         ax.set_title('Salaries by Job Category')
 
-        # Show the chart in Streamlit
-        st.pyplot(fig)
+#         # Show the chart in Streamlit
+#         st.pyplot(fig)
 
         # Plotting the diagram using matplotlib
-        plt.figure(figsize=(8, 5))
-        plt.bar(avg_salaries_predicted['Job_Code'], df['Predicted_Average_Salary'], color='skyblue')
+        fig = plt.figure(figsize=(8, 5))
+        plt.bar(avg_salaries_predicted['Job_Code'], avg_salaries_predicted['Avg'], color='skyblue')
 
         # Set chart labels and title
         plt.xlabel('Job Code')
         plt.ylabel('Predicted Average Salary ($)')
         plt.title('Predicted Average Salary by Job Code')
+ 
+        # Show the chart in Streamlit
+        st.pyplot(fig)
 
 
 
