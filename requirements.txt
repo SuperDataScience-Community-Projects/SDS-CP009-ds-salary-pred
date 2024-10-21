@@ -1,5 +1,0 @@
-streamlit
-pandas
-joblib
-sklearn
-sklearn.svm
