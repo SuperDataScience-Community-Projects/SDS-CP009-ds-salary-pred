@@ -44,7 +44,7 @@ def predict( company_value, location_value, job_value) -> float:
     avg_salary_predicted = model.predict(input_df)[0]
     return avg_salary_predicted
 
-def predict_all_jobs(company_value, location_value, jobs_df) -> pd.DataFrame:
+def predict_all_jobs(company_value, location_value, jobs_df):
     model = SVR()
     model = load_model()
     input_df = pd.DataFrame(columns=['Company_Code', 'Location_Code', 'Job_Code'])
