@@ -6,14 +6,6 @@ from sklearn.svm import SVR
 from geopy.geocoders import Nominatim
 import pydeck as pdk
 
-def get_coordinates(city_name: str):
-    geolocator = Nominatim(user_agent="city_locator")
-    location = geolocator.geocode(city_name)
-    if location:
-        return (location.latitude, location.longitude)
-    else:
-        return None
-
 @st.cache_data
 def load_model() -> SVR:
     file_path = 'web-app/oleg/Support_Vector_Regressor_model.pkl'
@@ -32,7 +24,6 @@ def load_model() -> SVR:
         print(f"An unexpected error occurred: {e}")
         return None
     
-@st.cache_data
 def load_data(file_path: str):
     try:
         df = pd.read_csv(file_path)
