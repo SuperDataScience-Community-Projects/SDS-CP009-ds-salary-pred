@@ -4,3 +4,4 @@ joblib
 scikit-learn
 geopy
 pydeck
+matplotlib

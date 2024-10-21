@@ -6,6 +6,8 @@ from sklearn.svm import SVR
 from geopy.geocoders import Nominatim
 import pydeck as pdk
 
+import matplotlib.pyplot as plt
+
 @st.cache_data
 def load_model() -> SVR:
     file_path = 'web-app/oleg/Support_Vector_Regressor_model.pkl'
@@ -46,12 +48,11 @@ def predict_all_jobs(company_value, location_value, jobs_df) -> pd.DataFrame:
     model = SVR()
     model = load_model()
     input_df=jobs_df
-    input_df['Company_code'] = company_value
-    input_df['Location_code'] = location_value
+    input_df['Company_Code'] = company_value
+    input_df['Location_Code'] = location_value
     
-    input_df.drop(columns=['Job Category'], inplace=True)
+    input_df.drop(columns=['Job_Category'], inplace=True)
 
-    input_df=pd.DataFrame([[company_value, location_value, job_value]], columns=['Company_Code', 'Location_Code', 'Job_Code'])
     avg_salaries_predicted = model.predict(input_df)
     return avg_salaries_predicted
 
@@ -81,7 +82,7 @@ def app():
        #Job
         job_name = st.selectbox('Job :', job_df['Job Category'].unique())
         # Retrieve the corresponding value
-        job_value = job_df[c['Job Category'] == job_name]['Job_Code'].values[0]
+        job_value = job_df[job_value['Job Category'] == job_name]['Job_Code'].values[0]
     
        #Company
         company_name = st.selectbox('Company :', company_df['Company'].unique())
@@ -94,8 +95,6 @@ def app():
             update = True
     
     if update:
-
-# ///
         # Initialize the Nominatim geocoder
         geolocator = Nominatim(user_agent="city_locator")
         location = geolocator.geocode(location_name)
@@ -121,8 +120,22 @@ def app():
         
         # Show the map
         st.pydeck_chart(city_location)
+# ///>
 
-# ///
+        # Create a bar chart using matplotlib
+        fig, ax = plt.subplots()
+        ax.bar(avg_salaries_predicted['Job Category'], avg_salaries_predicted['Avg. Salary'])
+# , columns=['Company_Code', 'Location_Code', 'Job_Code']
+        # Set labels
+        ax.set_xlabel('Job Title')
+        ax.set_ylabel('Avg. Salary ($)')
+        ax.set_title('Salaries by Job Category')
+
+        # Show the chart in Streamlit
+        st.pyplot(fig)
+
+
+# ///<
         st.write(f'Average Salary for the position of {job_name} at {company_name} company in the {location_name} area is {avg_salary_predicted:.2f}K anually')
     else:
         st.write('')
