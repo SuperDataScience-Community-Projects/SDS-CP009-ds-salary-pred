@@ -82,7 +82,7 @@ def app():
        #Job
         job_name = st.selectbox('Job :', job_df['Job Category'].unique())
         # Retrieve the corresponding value
-        job_value = job_df[job_value['Job Category'] == job_name]['Job_Code'].values[0]
+        job_value = job_df[job_df['Job Category'] == job_name]['Job_Code'].values[0]
     
        #Company
         company_name = st.selectbox('Company :', company_df['Company'].unique())
