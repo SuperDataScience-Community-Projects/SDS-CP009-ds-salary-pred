@@ -135,19 +135,19 @@ def app():
 
 #         # Show the chart in Streamlit
 #         st.pyplot(fig)
+# step2
+        # # Plotting the diagram using matplotlib
+        # fig = plt.figure(figsize=(8, 5))
+        # plt.bar(avg_salaries_predicted['Job_Code'], avg_salaries_predicted['Avg'], color='skyblue')
 
-        # Plotting the diagram using matplotlib
-        fig = plt.figure(figsize=(8, 5))
-        plt.bar(avg_salaries_predicted['Job_Code'], avg_salaries_predicted['Avg'], color='skyblue')
-
-        # Set chart labels and title
-        plt.xlabel('Job Code')
-        plt.ylabel('Predicted Average Salary ($)')
-        plt.title('Predicted Average Salary by Job Code')
+        # # Set chart labels and title
+        # plt.xlabel('Job Code')
+        # plt.ylabel('Predicted Average Salary ($)')
+        # plt.title('Predicted Average Salary by Job Code')
  
-        # Show the chart in Streamlit
-        st.pyplot(fig)
-
+        # # Show the chart in Streamlit
+        # st.pyplot(fig)
+        st.dataframe(avg_salaries_predicted)
 
 
 # ///<
