@@ -91,8 +91,8 @@ def app():
             initial_view_state=pdk.ViewState(
                 latitude=location.latitude,
                 longitude=location.longitude,
-                zoom=100,
-                pitch=50,
+                zoom=1,
+                pitch=5,
             ),
             layers=[
                 pdk.Layer(
