@@ -91,8 +91,8 @@ def app():
             initial_view_state=pdk.ViewState(
                 latitude=location.latitude,
                 longitude=location.longitude,
-                zoom=100,
-                pitch=5,
+                zoom=10,
+                pitch=50,
             ),
             layers=[
                 pdk.Layer(
@@ -100,7 +100,7 @@ def app():
                     data=[{"lat": location.latitude, "lon": location.longitude}],
                     get_position='[lon, lat]',
                     get_color='[200, 30, 0, 160]',
-                    get_radius=10000,
+                    get_radius=1000,
                 ),
             ],
         )
