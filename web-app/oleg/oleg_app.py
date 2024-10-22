@@ -127,7 +127,6 @@ def app():
         st.pydeck_chart(city_location)
 
         # Create the plot
-
         fig, ax = plt.subplots()
 
         bars = ax.bar(avg_salaries_predicted['Job'], avg_salaries_predicted['Avg'], color='limegreen')
@@ -143,7 +142,6 @@ def app():
             height = bar.get_height()
             ax.text(bar.get_x() + bar.get_width()/2., height,
                     f'${height:.2f}K', ha='center', va='bottom', fontsize=10)
-
 
         # Display the plot in Streamlit
         st.pyplot(fig)
