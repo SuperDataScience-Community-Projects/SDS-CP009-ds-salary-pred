@@ -125,14 +125,12 @@ def app():
         
         # Show the map
         st.pydeck_chart(city_location)
-        st.dataframe(avg_salaries_predicted)
 
         # Create the plot
 
         fig, ax = plt.subplots()
-        fig.patch.set_alpha(0.0)  # Set figure background to transparent
 
-        ax.bar(avg_salaries_predicted['Job'], avg_salaries_predicted['Avg'], color='limegreen')
+        bars = ax.bar(avg_salaries_predicted['Job'], avg_salaries_predicted['Avg'], color='limegreen')
         ax.set_xlabel('Job')
         ax.set_ylabel('Avg')
         ax.set_title('Average Salary by Job')
@@ -140,9 +138,16 @@ def app():
         # Rotate x labels if necessary
         plt.xticks(rotation=90)
 
+        # Add actual 'Avg' salary values on top of each bar
+        for bar in bars:
+            height = bar.get_height()
+            ax.text(bar.get_x() + bar.get_width()/2., height,
+                    f'${height:.0f}', ha='center', va='bottom', fontsize=10)
+
+
         # Display the plot in Streamlit
         st.pyplot(fig)
-        
+
         st.write(f'Average Salary for the position of {job_name} at {company_name} company in the {location_name} area is {avg_salary_predicted:.2f}K anually')
     else:
         st.write('')
