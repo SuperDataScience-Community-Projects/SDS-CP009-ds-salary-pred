@@ -100,36 +100,36 @@ def app():
             update = True
     
     if update:
-        # try:
-        # Initialize the Nominatim geocoder
-        geolocator = Nominatim(user_agent="LocationFinder")
-        location = geolocator.geocode(location_name)
-        # Create a map centered on the city's location
-        city_location = pdk.Deck(
-            map_style='mapbox://styles/mapbox/light-v9',
-            initial_view_state=pdk.ViewState(
-                latitude=location.latitude,
-                longitude=location.longitude,
-                zoom=10,
-                pitch=50,
-            ),
-            layers=[
-                pdk.Layer(
-                    'ScatterplotLayer',
-                    data=[{"lat": location.latitude, "lon": location.longitude}],
-                    get_position='[lon, lat]',
-                    get_color='[200, 30, 0, 160]',
-                    get_radius=1000,
+        try:
+            # Initialize the Nominatim geocoder
+            geolocator = Nominatim(user_agent="LocationFinder")
+            location = geolocator.geocode(location_name)
+            # Create a map centered on the city's location
+            city_location = pdk.Deck(
+                map_style='mapbox://styles/mapbox/light-v9',
+                initial_view_state=pdk.ViewState(
+                    latitude=location.latitude,
+                    longitude=location.longitude,
+                    zoom=10,
+                    pitch=50,
                 ),
-            ],
-        )
-            
-            # Show the map
-        st.pydeck_chart(city_location)
-        # except Exception:
-            # pass
-        # finally:
-        st.header(f'Salary Prediction for {location_name}')
+                layers=[
+                    pdk.Layer(
+                        'ScatterplotLayer',
+                        data=[{"lat": location.latitude, "lon": location.longitude}],
+                        get_position='[lon, lat]',
+                        get_color='[200, 30, 0, 160]',
+                        get_radius=1000,
+                    ),
+                ],
+            )
+                
+                # Show the map
+            st.pydeck_chart(city_location)
+        except Exception:
+            pass
+        finally:
+            st.header(f'Salary Prediction for {location_name}')
             
         # Create the plot
         fig, ax = plt.subplots()
