@@ -55,8 +55,6 @@ def predict_all_jobs(company_value, location_value, jobs_df) -> pd.DataFrame:
     output_df = pd.DataFrame(columns=['Company_Code', 'Location_Code', 'Job_Code','Job','Avg'])
     output_df = input_df
     output_df['Avg'] = model.predict(input_df)
-    # output_df['Job'] = jobs_df[jobs_df['Job Category'] == output_df['Job_Code']]
-    # avg_salaries_predicted = model.predict(input_df)
     output_df.loc[output_df['Job_Code'].isin(jobs_df['Job_Code']),'Job']=jobs_df.set_index('Job_Code')['Job Category']
     
     return output_df
@@ -127,6 +125,24 @@ def app():
         st.pydeck_chart(city_location)
         st.dataframe(avg_salaries_predicted)
 
+# /////<BEGIN>
+# Create the plot
+        x = avg_salaries_predicted['Job']
+        y = avg_salaries_predicted['Avg'] 
+
+        fig, ax = plt.subplots()
+        ax.plot(x, y, marker='o', linestyle='-', color='b')
+        ax.set_title('Salaries by job')
+        ax.set_xlabel('JOb')
+        ax.set_ylabel('Salary ,K $ ')
+        ax.set_xticks(x) 
+        ax.set_yticks(range(1, len(avg_salaries_predicted['Job']) + 1))  # Set y-ticks to be the values in Job
+        ax.set_yticklabels(avg_salaries_predicted['Avg'])  # Set y-tick labels to actual Job values
+        ax.grid()
+
+        # Display the plot in Streamlit
+        st.pyplot(fig)
+# /////<END>
         st.write(f'Average Salary for the position of {job_name} at {company_name} company in the {location_name} area is {avg_salary_predicted:.2f}K anually')
     else:
         st.write('')
