@@ -61,7 +61,6 @@ def predict_all_jobs(company_value, location_value, jobs_df) -> pd.DataFrame:
 
     return output_df
 
-
 # App execution
 def app():
     #initialise page
