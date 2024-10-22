@@ -133,12 +133,21 @@ def app():
         # y = avg_salaries_predicted['Avg'] 
 
         fig, ax = plt.subplots()
-        ax.hist(x, bins=len(x), color='g', edgecolor='black')
-        # ax.plot(x, y, marker='o', linestyle='-', color='b')
-        ax.set_title('Salaries by job')
+        # ax.hist(x, bins=len(x), color='g', edgecolor='black')
+        # # ax.plot(x, y, marker='o', linestyle='-', color='b')
+        # ax.set_title('Salaries by job')
+        # ax.set_xlabel('Job')
+        # ax.set_ylabel('Salary ,K $ ')
+        # ax.tick_params(axis='x', labelrotation=90)
+
+        ax.bar(avg_salaries_predicted['Job'], avg_salaries_predicted['Avg'], color='green')
         ax.set_xlabel('Job')
-        ax.set_ylabel('Salary ,K $ ')
-        ax.tick_params(axis='x', labelrotation=90)
+        ax.set_ylabel('Avg')
+        ax.set_title('Average Salary by Job')
+
+        # Rotate x labels if necessary
+        plt.xticks(rotation=45)
+
         # ax.set_xticks(x) 
         # ax.set_yticks(range(1, len(avg_salaries_predicted['Job']) + 1))  # Set y-ticks to be the values in Job
         # ax.set_yticklabels(avg_salaries_predicted['Avg'])  # Set y-tick labels to actual Job values
