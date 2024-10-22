@@ -131,9 +131,9 @@ def app():
         fig, ax = plt.subplots()
 
         bars = ax.bar(avg_salaries_predicted['Job'], avg_salaries_predicted['Avg'], color='limegreen')
-        ax.set_xlabel('Job')
-        ax.set_ylabel('Avg')
-        ax.set_title('Average Salary by Job')
+        ax.set_xlabel('Job Categories')
+        ax.set_ylabel('Predicted Average Salary, K$')
+        ax.set_title('Predicted Average Salary by Job')
 
         # Rotate x labels if necessary
         plt.xticks(rotation=90)
@@ -142,7 +142,7 @@ def app():
         for bar in bars:
             height = bar.get_height()
             ax.text(bar.get_x() + bar.get_width()/2., height,
-                    f'${height:.0f}', ha='center', va='bottom', fontsize=10)
+                    f'${height:.2f}K', ha='center', va='bottom', fontsize=10)
 
 
         # Display the plot in Streamlit
