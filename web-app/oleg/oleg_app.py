@@ -102,7 +102,7 @@ def app():
     if update:
         try:
             # Initialize the Nominatim geocoder
-            geolocator = Nominatim(user_agent="LocationFinder")
+            geolocator = Nominatim(user_agent="SDS_CP009_location_founder")
             location = geolocator.geocode(location_name)
             # Create a map centered on the city's location
             city_location = pdk.Deck(
@@ -124,7 +124,7 @@ def app():
                 ],
             )
                 
-                # Show the map
+            # Show the map
             st.pydeck_chart(city_location)
         except Exception:
             pass
