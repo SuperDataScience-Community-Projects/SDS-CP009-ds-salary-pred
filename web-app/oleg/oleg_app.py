@@ -102,7 +102,7 @@ def app():
     if update:
         try:
             # Initialize the Nominatim geocoder
-            geolocator = Nominatim(user_agent="city_locator")
+            geolocator = Nominatim(user_agent="LocationFinder")
             location = geolocator.geocode(location_name)
             # Create a map centered on the city's location
             city_location = pdk.Deck(
