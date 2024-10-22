@@ -57,7 +57,7 @@ def predict_all_jobs(company_value, location_value, jobs_df) -> pd.DataFrame:
     output_df['Avg'] = model.predict(input_df)
     # output_df['Job'] = jobs_df[jobs_df['Job Category'] == output_df['Job_Code']]
     # avg_salaries_predicted = model.predict(input_df)
-    output_df.loc[output_df['Job_Code'].isin(input_df['Job_Code']),'Job']=input_df.set_index('Job_Code')['Job Category']
+    output_df.loc[output_df['Job_Code'].isin(input_df['Job_Code']),'Job']=input_df.set_index('Job_Code')
     return output_df
 
 
