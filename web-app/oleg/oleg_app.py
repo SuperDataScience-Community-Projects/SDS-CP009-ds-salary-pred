@@ -131,11 +131,11 @@ def app():
 
 # /////<BEGIN>
 # Create the plot
-        x = avg_salaries_predicted['Job']
-        y = avg_salaries_predicted['Avg'] 
+        y = avg_salaries_predicted['Job']
+        x = avg_salaries_predicted['Avg'] 
 
         fig, ax = plt.subplots()
-        ax.hist(y, bins=len(x), color='g', edgecolor='black')
+        ax.hist(x, bins=len(x), color='g', edgecolor='black')
         # ax.plot(x, y, marker='o', linestyle='-', color='b')
         ax.set_title('Salaries by job')
         ax.set_xlabel('Job')
