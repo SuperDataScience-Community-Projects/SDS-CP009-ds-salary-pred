@@ -127,35 +127,21 @@ def app():
         st.pydeck_chart(city_location)
         st.dataframe(avg_salaries_predicted)
 
-# /////<BEGIN>
-# Create the plot
-        x = avg_salaries_predicted['Job']
-        # y = avg_salaries_predicted['Avg'] 
+        # Create the plot
 
         fig, ax = plt.subplots()
-        # ax.hist(x, bins=len(x), color='g', edgecolor='black')
-        # # ax.plot(x, y, marker='o', linestyle='-', color='b')
-        # ax.set_title('Salaries by job')
-        # ax.set_xlabel('Job')
-        # ax.set_ylabel('Salary ,K $ ')
-        # ax.tick_params(axis='x', labelrotation=90)
+        fig.patch.set_alpha(0.0)  # Set figure background to transparent
 
-        ax.bar(avg_salaries_predicted['Job'], avg_salaries_predicted['Avg'], color='green')
+        ax.bar(avg_salaries_predicted['Job'], avg_salaries_predicted['Avg'], color='limegreen')
         ax.set_xlabel('Job')
         ax.set_ylabel('Avg')
         ax.set_title('Average Salary by Job')
 
         # Rotate x labels if necessary
-        plt.xticks(rotation=45)
-
-        # ax.set_xticks(x) 
-        # ax.set_yticks(range(1, len(avg_salaries_predicted['Job']) + 1))  # Set y-ticks to be the values in Job
-        # ax.set_yticklabels(avg_salaries_predicted['Avg'])  # Set y-tick labels to actual Job values
-        # ax.grid()
+        plt.xticks(rotation=90)
 
         # Display the plot in Streamlit
-        st.pyplot(fig)
-# /////<END>
+
         st.write(f'Average Salary for the position of {job_name} at {company_name} company in the {location_name} area is {avg_salary_predicted:.2f}K anually')
     else:
         st.write('')
